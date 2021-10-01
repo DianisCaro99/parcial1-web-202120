@@ -3,6 +3,7 @@ const express = require('express');
 const { getPairsOfPlayers } = require('./controller');
 const router = express.Router();
 
+
 router.get('/', async (req, resp = response, next) => {
   try {
     await getPairsOfPlayers(req, resp, next);
@@ -10,5 +11,6 @@ router.get('/', async (req, resp = response, next) => {
     resp.status(500).json({ error });
   }
 });
+
 
 module.exports = router;
